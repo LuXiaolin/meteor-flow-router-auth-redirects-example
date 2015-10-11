@@ -1,9 +1,7 @@
 Template.mainLogin.onCreated(function () {
-  this.redirect = new ReactiveVar(true);
-
   this.autorun(() => {
-    if (Meteor.user() && this.redirect === true) {
-      FlowRouter.go('main.home');
+    if (Meteor.user()) {
+      FlowRouter.go('main.profile');
     }
   });
 });
@@ -19,10 +17,6 @@ Template.mainLogin.events({
       Meteor.loginWithPassword(user, password, function (error) {
         if (error) {
           return FlowRouter.go('main.home');
-        } else {
-          target.redirect.set('false');
-
-          return FlowRouter.go('main.profile');
         }
       });
     }
