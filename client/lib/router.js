@@ -22,7 +22,9 @@ FlowRouter.route('/profile', {
 FlowRouter.route('/logout', {
   name: 'main.logout',
   action: function () {
-    return Meteor.logout(function () {
+    Meteor.logout(function () {
+      Session.set('redirect', false);
+
       return FlowRouter.go('main.home');
     })
   }

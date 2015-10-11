@@ -17,6 +17,8 @@ Template.mainLogin.events({
       Meteor.loginWithPassword(user, password, function (error) {
         if (error) {
           return FlowRouter.go('main.home');
+        } else {
+          Session.set('redirect', true);
         }
       });
     }
