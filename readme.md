@@ -1,5 +1,7 @@
 # Flow Router Auth Example + Redirects
 
+[DEMO](http://frar.meteor.com/)
+
 Two parts:
 
 - main
