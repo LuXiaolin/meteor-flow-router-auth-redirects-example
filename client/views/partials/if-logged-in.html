@@ -1,0 +1,11 @@
+<template name="ifLoggedIn">
+  {{#unless loggingIn}}
+    {{#if currentUser}}
+      {{> Template.contentBlock}}
+    {{else}}
+      {{> Template.elseBlock}}
+    {{/if}}
+  {{else}}
+    {{> loading}}
+  {{/unless}}
+</template>

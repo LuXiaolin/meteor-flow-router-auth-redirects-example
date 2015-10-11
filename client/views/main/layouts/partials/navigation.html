@@ -1,0 +1,27 @@
+<template name="mainNavigation">
+  <nav>
+    <ul>
+      <li>
+        <a href="{{route 'main.home'}}">Home</a>
+      </li>
+      {{#ifLoggedIn}}
+        <li>
+          <a href="{{route 'main.profile'}}">Profile page</a>
+        </li>
+        <li>
+          <a href="{{route 'admin.dashboard'}}">Admin dashboard</a>
+        </li>
+        <li>
+          <a href="{{route 'admin.users'}}">Admin users</a>
+        </li>
+        <li>
+          <a href="{{route 'main.logout'}}">Log out</a>
+        </li>
+      {{else}}
+        <li>
+          <a href="{{route 'main.login'}}">Login page</a>
+        </li>
+      {{/ifLoggedIn}}
+    </ul>
+  </nav>
+</template>

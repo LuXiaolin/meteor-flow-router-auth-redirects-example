@@ -1,0 +1,11 @@
+<template name="adminLayout">
+  {{#ifLoggedIn}}
+    <header>
+      <h1>Admin Layout</h1>
+      {{> adminNavigation}}
+    </header>
+    <main>
+      {{> Template.dynamic template=main}}
+    </main>
+  {{/ifLoggedIn}}
+</template>

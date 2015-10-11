@@ -1,0 +1,13 @@
+<template name="mainLogin">
+  {{#unless loggingIn}}
+    {{#unless currentUser}}
+      <form>
+        <input type="text" name="user" placeholder="login">
+        <input type="password" name="password" placeholder="password">
+        <button type="submit">Enter</button>
+      </form>
+    {{/unless}}
+  {{else}}
+    {{> loading}}
+  {{/unless}}
+</template>
