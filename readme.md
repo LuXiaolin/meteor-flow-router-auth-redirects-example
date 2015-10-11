@@ -22,5 +22,7 @@ The routes we have:
 - **/admin**
   - has restricted layout, all pages will be checked for logged in user
   - restricted dashboard page
+  - if not logged in, redirect to login page
 - **/admin/users**
   - restricted users page
+  - if not logged in, redirect to login page

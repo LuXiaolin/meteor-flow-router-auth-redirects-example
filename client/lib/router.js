@@ -41,3 +41,9 @@ FlowRouter.route('/admin/users', {
     BlazeLayout.render('adminLayout', {main: "adminUsers"});
   }
 });
+
+FlowRouter.notFound = {
+  action: function () {
+    BlazeLayout.render('notFound');
+  }
+};
