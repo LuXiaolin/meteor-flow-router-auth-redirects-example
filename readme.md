@@ -28,3 +28,5 @@ The routes we have:
 - **/admin/users**
   - restricted users page
   - if not logged in, redirect to login page
+
+**The black square is where you put your spinner.**
