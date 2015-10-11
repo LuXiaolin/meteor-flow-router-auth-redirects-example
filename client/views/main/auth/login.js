@@ -1,6 +1,8 @@
 Template.mainLogin.onCreated(function () {
+  this.redirect = new ReactiveVar(true);
+
   this.autorun(() => {
-    if (Meteor.user()) {
+    if (Meteor.user() && this.redirect === true) {
       FlowRouter.go('main.home');
     }
   });
@@ -18,6 +20,8 @@ Template.mainLogin.events({
         if (error) {
           return FlowRouter.go('main.home');
         } else {
+          target.redirect.set('false');
+
           return FlowRouter.go('main.profile');
         }
       });
