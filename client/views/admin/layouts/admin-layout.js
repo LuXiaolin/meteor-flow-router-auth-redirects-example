@@ -1,9 +1,7 @@
 Template.adminLayout.onCreated(function () {
   this.autorun(() => {
-    if (!Meteor.loggingIn()) {
-      if (!Meteor.user()) {
-        FlowRouter.go('main.login');
-      }
+    if (!Meteor.loggingIn() && !Meteor.user() && Session.get('redirect') === true) {
+      FlowRouter.go('main.login');
     }
   });
 });
